@@ -1,19 +1,20 @@
 <nav>
   <ul>
     <li>
-      <a [routerLink] = "'/register'">Register</a>
+      <a [routerLink] = "'/register'" id="register">Register</a>
     </li>
     <li>
-      <a [routerLink] = "'/login'">Login</a>
+      <a [routerLink] = "'/login'" id="login">Login</a>
     </li>
     <li>
-      <a [routerLink] = "'/logout'">Logout</a>
+      <a [routerLink] = "'/logout'" id="logout">Logout</a>
     </li>
     <li>
-      <a [routerLink] = "'/front'">Front page</a>
+      <a [routerLink] = "'/front'" id="front">Front page</a>
     </li>
     <li>
-      <a [routerLink] = "'/upload'">Upload</a>
+      <a [routerLink] = "'/upload'" id="upload">Upload</a>
     </li>
+    <p id="loggedAs">Logged in as: {{ this.mediaService.loggedAs }}</p>
   </ul>
 </nav>

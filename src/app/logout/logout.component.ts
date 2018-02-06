@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MediaService} from '../services/media.service';
 
 @Component({
   selector: 'app-logout',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mediaService: MediaService) { }
 
   ngOnInit() {
+    if (localStorage.getItem('loggedToken') !== null) {
+      localStorage.setItem('loggedToken', null);
+    }
+
+    this.mediaService.router.navigate(['login']);
   }
 
 }

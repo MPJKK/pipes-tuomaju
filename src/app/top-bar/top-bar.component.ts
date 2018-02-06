@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MediaService} from '../services/media.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public mediaService: MediaService) { }
 
   ngOnInit() {
+
   }
 
 }
