@@ -18,6 +18,10 @@ export class MediaService {
     return this.http.get(this.apiUrl + '/media');
   }
 
+  getSomeMedia(n) {
+    return this.http.get(this.apiUrl + '/media?limit=' + n);
+  }
+
   newUser(user) {
     return this.http.post(this.apiUrl + '/users', user);
   }
@@ -28,9 +32,8 @@ export class MediaService {
           console.log(response);
           if (typeof (Storage) !== 'undefined') {
             localStorage.setItem('loggedToken', response.token);
-
           }
-
+          this.logged = true;
           console.log(localStorage.getItem('loggedToken'));
 
           this.router.navigate(['front']);
